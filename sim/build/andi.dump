@@ -1,0 +1,60 @@
+   0:	ff0100b7          	lui	ra,0xff010
+   4:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fe44>
+   8:	f0f0ff13          	andi	t5,ra,-241
+   c:	ff010eb7          	lui	t4,0xff010
+  10:	f00e8e93          	addi	t4,t4,-256 # ff00ff00 <fail+0xff00fe44>
+  14:	00200193          	li	gp,2
+  18:	0bdf1263          	bne	t5,t4,bc <fail>
+
+  1c:	0ff010b7          	lui	ra,0xff01
+  20:	ff008093          	addi	ra,ra,-16 # ff00ff0 <fail+0xff00f34>
+  24:	0f00ff13          	andi	t5,ra,240
+  28:	0f000e93          	li	t4,240
+  2c:	00300193          	li	gp,3
+  30:	09df1663          	bne	t5,t4,bc <fail>
+
+  34:	00ff00b7          	lui	ra,0xff0
+  38:	0ff08093          	addi	ra,ra,255 # ff00ff <fail+0xff0043>
+  3c:	70f0ff13          	andi	t5,ra,1807
+  40:	00f00e93          	li	t4,15
+  44:	00400193          	li	gp,4
+  48:	07df1a63          	bne	t5,t4,bc <fail>
+
+  4c:	f00ff0b7          	lui	ra,0xf00ff
+  50:	00f08093          	addi	ra,ra,15 # f00ff00f <fail+0xf00fef53>
+  54:	0f00ff13          	andi	t5,ra,240
+  58:	00000e93          	li	t4,0
+  5c:	00500193          	li	gp,5
+  60:	05df1e63          	bne	t5,t4,bc <fail>
+
+  64:	ff0100b7          	lui	ra,0xff010
+  68:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fe44>
+  6c:	0f00f093          	andi	ra,ra,240
+  70:	00000e93          	li	t4,0
+  74:	00600193          	li	gp,6
+  78:	05d09263          	bne	ra,t4,bc <fail>
+
+  7c:	0f007093          	andi	ra,zero,240
+  80:	00000e93          	li	t4,0
+  84:	00d00193          	li	gp,13
+  88:	03d09a63          	bne	ra,t4,bc <fail>
+
+  8c:	00ff00b7          	lui	ra,0xff0
+  90:	0ff08093          	addi	ra,ra,255 # ff00ff <fail+0xff0043>
+  94:	70f0f013          	andi	zero,ra,1807
+  98:	00000e93          	li	t4,0
+  9c:	00e00193          	li	gp,14
+  a0:	01d01e63          	bne	zero,t4,bc <fail>
+  a4:	00301263          	bne	zero,gp,a8 <pass>
+
+  a8:	00000013          	nop
+  ac:	00000013          	nop
+  b0:	ff9ff06f          	j	a8 <pass>
+  b4:	00000013          	nop
+  b8:	00000013          	nop
+
+  bc:	00000013          	nop
+  c0:	00000493          	li	s1,0
+  c4:	ff9ff06f          	j	bc <fail>
+  c8:	00000013          	nop
+  cc:	00000013          	nop

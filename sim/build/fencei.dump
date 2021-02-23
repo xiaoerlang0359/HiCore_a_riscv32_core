@@ -1,0 +1,40 @@
+00000000 <back_2-0x30>:
+   0:	14d68693          	addi	a3,a3,333
+   4:	06f00693          	li	a3,111
+   8:	00000517          	auipc	a0,0x0
+   c:	ff852503          	lw	a0,-8(a0) # 0 <back_2-0x30>
+  10:	00000297          	auipc	t0,0x0
+  14:	00a2a623          	sw	a0,12(t0) # 1c <back_2-0x14>
+  18:	0000100f          	fence.i
+  1c:	0de68693          	addi	a3,a3,222
+  20:	1bc00e93          	li	t4,444
+  24:	00200193          	li	gp,2
+  28:	05d69463          	bne	a3,t4,70 <fail>
+  2c:	06400713          	li	a4,100
+
+00000030 <back_2>:
+  30:	fff70713          	addi	a4,a4,-1
+  34:	fe071ee3          	bnez	a4,30 <back_2>
+  38:	00000297          	auipc	t0,0x0
+  3c:	00a2a623          	sw	a0,12(t0) # 44 <back_2+0x14>
+  40:	0000100f          	fence.i
+  44:	22b68693          	addi	a3,a3,555
+  48:	00000013          	nop
+  4c:	30900e93          	li	t4,777
+  50:	00300193          	li	gp,3
+  54:	01d69e63          	bne	a3,t4,70 <fail>
+  58:	00301263          	bne	zero,gp,5c <pass>
+
+0000005c <pass>:
+  5c:	00000013          	nop
+  60:	00000013          	nop
+  64:	ff9ff06f          	j	5c <pass>
+  68:	00000013          	nop
+  6c:	00000013          	nop
+
+00000070 <fail>:
+  70:	00000013          	nop
+  74:	00000493          	li	s1,0
+  78:	ff9ff06f          	j	70 <fail>
+  7c:	00000013          	nop
+  80:	00000013          	nop

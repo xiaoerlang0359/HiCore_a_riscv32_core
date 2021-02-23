@@ -1,0 +1,27 @@
+00000000 <start>:
+   0:	01c00fef          	jal	t6,1c <main>
+   4:	00000013          	nop
+   8:	00000013          	nop
+
+0000000c <trap_vector>:
+   c:	34051073          	csrw	mscratch,a0
+  10:	34202f73          	csrr	t5,mcause
+  14:	34002573          	csrr	a0,mscratch
+  18:	30200073          	mret
+
+0000001c <main>:
+  1c:	00000297          	auipc	t0,0x0
+  20:	ff028293          	addi	t0,t0,-16 # c <trap_vector>
+  24:	30529473          	csrrw	s0,mtvec,t0
+  28:	30502273          	csrr	tp,mtvec
+  2c:	30046473          	csrrsi	s0,mstatus,8
+  30:	000012b7          	lui	t0,0x1
+  34:	80028293          	addi	t0,t0,-2048 # 800 <main+0x7e4>
+  38:	3042a473          	csrrs	s0,mie,t0
+  3c:	00000297          	auipc	t0,0x0
+  40:	00428fe7          	jalr	t6,4(t0) # 40 <main+0x24>
+  44:	00000013          	nop
+  48:	00000013          	nop
+  4c:	00000013          	nop
+  50:	00000013          	nop
+  54:	00000013          	nop

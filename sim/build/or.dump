@@ -1,0 +1,50 @@
+   0:	ff0100b7          	lui	ra,0xff010
+   4:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fe5c>
+   8:	0f0f1137          	lui	sp,0xf0f1
+   c:	f0f10113          	addi	sp,sp,-241 # f0f0f0f <fail+0xf0f0e6b>
+  10:	0020ef33          	or	t5,ra,sp
+  14:	ff100eb7          	lui	t4,0xff100
+  18:	f0fe8e93          	addi	t4,t4,-241 # ff0fff0f <fail+0xff0ffe6b>
+  1c:	00200193          	li	gp,2
+  20:	09df1263          	bne	t5,t4,a4 <fail>
+  24:	0ff010b7          	lui	ra,0xff01
+  28:	ff008093          	addi	ra,ra,-16 # ff00ff0 <fail+0xff00f4c>
+  2c:	f0f0f137          	lui	sp,0xf0f0f
+  30:	0f010113          	addi	sp,sp,240 # f0f0f0f0 <fail+0xf0f0f04c>
+  34:	0020ef33          	or	t5,ra,sp
+  38:	fff10eb7          	lui	t4,0xfff10
+  3c:	ff0e8e93          	addi	t4,t4,-16 # fff0fff0 <fail+0xfff0ff4c>
+  40:	00300193          	li	gp,3
+  44:	07df1063          	bne	t5,t4,a4 <fail>
+  48:	00ff00b7          	lui	ra,0xff0
+  4c:	0ff08093          	addi	ra,ra,255 # ff00ff <fail+0xff005b>
+  50:	0f0f1137          	lui	sp,0xf0f1
+  54:	f0f10113          	addi	sp,sp,-241 # f0f0f0f <fail+0xf0f0e6b>
+  58:	0020ef33          	or	t5,ra,sp
+  5c:	0fff1eb7          	lui	t4,0xfff1
+  60:	fffe8e93          	addi	t4,t4,-1 # fff0fff <fail+0xfff0f5b>
+  64:	00400193          	li	gp,4
+  68:	03df1e63          	bne	t5,t4,a4 <fail>
+  6c:	111110b7          	lui	ra,0x11111
+  70:	11108093          	addi	ra,ra,273 # 11111111 <fail+0x1111106d>
+  74:	22222137          	lui	sp,0x22222
+  78:	22210113          	addi	sp,sp,546 # 22222222 <fail+0x2222217e>
+  7c:	0020e033          	or	zero,ra,sp
+  80:	00000e93          	li	t4,0
+  84:	01b00193          	li	gp,27
+  88:	01d01e63          	bne	zero,t4,a4 <fail>
+  8c:	00301263          	bne	zero,gp,90 <pass>
+
+00000090 <pass>:
+  90:	00000013          	nop
+  94:	00000013          	nop
+  98:	ff9ff06f          	j	90 <pass>
+  9c:	00000013          	nop
+  a0:	00000013          	nop
+
+000000a4 <fail>:
+  a4:	00000013          	nop
+  a8:	00000493          	li	s1,0
+  ac:	ff9ff06f          	j	a4 <fail>
+  b0:	00000013          	nop
+  b4:	00000013          	nop

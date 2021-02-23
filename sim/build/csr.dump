@@ -1,0 +1,80 @@
+   0:	3401d073          	csrwi	mscratch,3
+   4:	34002573          	csrr	a0,mscratch
+   8:	00300e93          	li	t4,3
+   c:	00200193          	li	gp,2
+  10:	11d51263          	bne	a0,t4,114 <fail>
+  14:	3400f5f3          	csrrci	a1,mscratch,1
+  18:	00300e93          	li	t4,3
+  1c:	00300193          	li	gp,3
+  20:	0fd59a63          	bne	a1,t4,114 <fail>
+  24:	34026673          	csrrsi	a2,mscratch,4
+  28:	00200e93          	li	t4,2
+  2c:	00400193          	li	gp,4
+  30:	0fd61263          	bne	a2,t4,114 <fail>
+  34:	340156f3          	csrrwi	a3,mscratch,2
+  38:	00600e93          	li	t4,6
+  3c:	00500193          	li	gp,5
+  40:	0dd69a63          	bne	a3,t4,114 <fail>
+  44:	0bad2537          	lui	a0,0xbad2
+  48:	dea50513          	addi	a0,a0,-534 # bad1dea <fail+0xbad1cd6>
+  4c:	340515f3          	csrrw	a1,mscratch,a0
+  50:	00200e93          	li	t4,2
+  54:	00600193          	li	gp,6
+  58:	0bd59e63          	bne	a1,t4,114 <fail>
+  5c:	00002537          	lui	a0,0x2
+  60:	dea50513          	addi	a0,a0,-534 # 1dea <fail+0x1cd6>
+  64:	34053573          	csrrc	a0,mscratch,a0
+  68:	0bad2eb7          	lui	t4,0xbad2
+  6c:	deae8e93          	addi	t4,t4,-534 # bad1dea <fail+0xbad1cd6>
+  70:	00700193          	li	gp,7
+  74:	0bd51063          	bne	a0,t4,114 <fail>
+  78:	0000c537          	lui	a0,0xc
+  7c:	eef50513          	addi	a0,a0,-273 # beef <fail+0xbddb>
+  80:	34052573          	csrrs	a0,mscratch,a0
+  84:	0bad0eb7          	lui	t4,0xbad0
+  88:	00800193          	li	gp,8
+  8c:	09d51463          	bne	a0,t4,114 <fail>
+  90:	34002573          	csrr	a0,mscratch
+  94:	0badceb7          	lui	t4,0xbadc
+  98:	eefe8e93          	addi	t4,t4,-273 # badbeef <fail+0xbadbddb>
+  9c:	00900193          	li	gp,9
+  a0:	07d51a63          	bne	a0,t4,114 <fail>
+  a4:	00800513          	li	a0,8
+  a8:	30052073          	csrs	mstatus,a0
+  ac:	30102573          	csrr	a0,misa
+  b0:	02057513          	andi	a0,a0,32
+  b4:	00050c63          	beqz	a0,cc <test_11>
+  b8:	000065b7          	lui	a1,0x6
+  bc:	3005a073          	csrs	mstatus,a1
+  c0:	3005b073          	csrc	mstatus,a1
+  c4:	00002597          	auipc	a1,0x2
+  c8:	cf658593          	addi	a1,a1,-778 # 1dba <fail+0x1ca6>
+
+000000cc <test_11>:
+  cc:	0ff00513          	li	a0,255
+  d0:	b0046573          	csrrsi	a0,mcycle,8
+  d4:	30446573          	csrrsi	a0,mie,8
+  d8:	30546573          	csrrsi	a0,mtvec,8
+  dc:	34146573          	csrrsi	a0,mepc,8
+  e0:	34246573          	csrrsi	a0,mcause,8
+  e4:	34446573          	csrrsi	a0,mip,8
+  e8:	b8046573          	csrrsi	a0,mcycleh,8
+  ec:	b0246573          	csrrsi	a0,minstret,8
+  f0:	b8246573          	csrrsi	a0,minstreth,8
+  f4:	f1146573          	csrrsi	a0,mvendorid,8
+  f8:	f1246573          	csrrsi	a0,marchid,8
+  fc:	f1446573          	csrrsi	a0,mhartid,8
+
+00000100 <pass>:
+ 100:	00000013          	nop
+ 104:	00000013          	nop
+ 108:	ff9ff06f          	j	100 <pass>
+ 10c:	00000013          	nop
+ 110:	00000013          	nop
+
+00000114 <fail>:
+ 114:	00000013          	nop
+ 118:	00000493          	li	s1,0
+ 11c:	ff9ff06f          	j	114 <fail>
+ 120:	00000013          	nop
+ 124:	00000013          	nop

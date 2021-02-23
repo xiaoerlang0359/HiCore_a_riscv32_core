@@ -1,0 +1,19 @@
+00000000 <start>:
+   0:	01c00fef          	jal	t6,1c <main>
+   4:	00000013          	nop
+   8:	00000013          	nop
+
+0000000c <trap_vector>:
+   c:	34051073          	csrw	mscratch,a0
+  10:	34202f73          	csrr	t5,mcause
+  14:	34002573          	csrr	a0,mscratch
+  18:	30200073          	mret
+
+0000001c <main>:
+  1c:	00000297          	auipc	t0,0x0
+  20:	ff028293          	addi	t0,t0,-16 # c <trap_vector>
+  24:	30529473          	csrrw	s0,mtvec,t0
+  28:	30502273          	csrr	tp,mtvec
+  2c:	00000000          	unimp
+  30:	00000013          	nop
+  34:	00000013          	nop

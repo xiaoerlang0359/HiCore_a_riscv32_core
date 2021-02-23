@@ -1,0 +1,5 @@
+set_property -dict {PACKAGE_PIN T9 IOSTANDARD LVCMOS33} [get_ports clk_in]
+create_clock -period 10.000 -name rv_clk -waveform {0.000 5.000} -add [get_ports clk_in]
+set_property -dict {PACKAGE_PIN T5 IOSTANDARD LVCMOS33} [get_ports rst_n_in]
+set_property -dict {PACKAGE_PIN U10 IOSTANDARD LVCMOS33} [get_ports flush]
+set_property -dict {PACKAGE_PIN V11 IOSTANDARD LVCMOS33} [get_ports branch]

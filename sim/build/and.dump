@@ -1,0 +1,107 @@
+   0:	ff0100b7          	lui	ra,0xff010
+   4:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fd98>
+   8:	0f0f1137          	lui	sp,0xf0f1
+   c:	f0f10113          	addi	sp,sp,-241 # f0f0f0f <fail+0xf0f0da7>
+  10:	0020ff33          	and	t5,ra,sp
+  14:	0f001eb7          	lui	t4,0xf001
+  18:	f00e8e93          	addi	t4,t4,-256 # f000f00 <fail+0xf000d98>
+  1c:	00200193          	li	gp,2
+  20:	15df1463          	bne	t5,t4,168 <fail>
+  
+  24:	0ff010b7          	lui	ra,0xff01
+  28:	ff008093          	addi	ra,ra,-16 # ff00ff0 <fail+0xff00e88>
+  2c:	f0f0f137          	lui	sp,0xf0f0f
+  30:	0f010113          	addi	sp,sp,240 # f0f0f0f0 <fail+0xf0f0ef88>
+  34:	0020ff33          	and	t5,ra,sp
+  38:	00f00eb7          	lui	t4,0xf00
+  3c:	0f0e8e93          	addi	t4,t4,240 # f000f0 <fail+0xefff88>
+  40:	00300193          	li	gp,3
+  44:	13df1263          	bne	t5,t4,168 <fail>
+
+  48:	00ff00b7          	lui	ra,0xff0
+  4c:	0ff08093          	addi	ra,ra,255 # ff00ff <fail+0xfeff97>
+  50:	0f0f1137          	lui	sp,0xf0f1
+  54:	f0f10113          	addi	sp,sp,-241 # f0f0f0f <fail+0xf0f0da7>
+  58:	0020ff33          	and	t5,ra,sp
+  5c:	000f0eb7          	lui	t4,0xf0
+  60:	00fe8e93          	addi	t4,t4,15 # f000f <fail+0xefea7>
+  64:	00400193          	li	gp,4
+  68:	11df1063          	bne	t5,t4,168 <fail>
+
+  6c:	f00ff0b7          	lui	ra,0xf00ff
+  70:	00f08093          	addi	ra,ra,15 # f00ff00f <fail+0xf00feea7>
+  74:	f0f0f137          	lui	sp,0xf0f0f
+  78:	0f010113          	addi	sp,sp,240 # f0f0f0f0 <fail+0xf0f0ef88>
+  7c:	0020ff33          	and	t5,ra,sp
+  80:	f000feb7          	lui	t4,0xf000f
+  84:	00500193          	li	gp,5
+  88:	0fdf1063          	bne	t5,t4,168 <fail>
+
+  8c:	ff0100b7          	lui	ra,0xff010
+  90:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fd98>
+  94:	0f0f1137          	lui	sp,0xf0f1
+  98:	f0f10113          	addi	sp,sp,-241 # f0f0f0f <fail+0xf0f0da7>
+  9c:	0020f0b3          	and	ra,ra,sp
+  a0:	0f001eb7          	lui	t4,0xf001
+  a4:	f00e8e93          	addi	t4,t4,-256 # f000f00 <fail+0xf000d98>
+  a8:	00600193          	li	gp,6
+  ac:	0bd09e63          	bne	ra,t4,168 <fail>
+
+  b0:	0ff010b7          	lui	ra,0xff01
+  b4:	ff008093          	addi	ra,ra,-16 # ff00ff0 <fail+0xff00e88>
+  b8:	f0f0f137          	lui	sp,0xf0f0f
+  bc:	0f010113          	addi	sp,sp,240 # f0f0f0f0 <fail+0xf0f0ef88>
+  c0:	0020f133          	and	sp,ra,sp
+  c4:	00f00eb7          	lui	t4,0xf00
+  c8:	0f0e8e93          	addi	t4,t4,240 # f000f0 <fail+0xefff88>
+  cc:	00700193          	li	gp,7
+  d0:	09d11c63          	bne	sp,t4,168 <fail>
+
+  d4:	ff0100b7          	lui	ra,0xff010
+  d8:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fd98>
+  dc:	0010f0b3          	and	ra,ra,ra
+  e0:	ff010eb7          	lui	t4,0xff010
+  e4:	f00e8e93          	addi	t4,t4,-256 # ff00ff00 <fail+0xff00fd98>
+  e8:	00800193          	li	gp,8
+  ec:	07d09e63          	bne	ra,t4,168 <fail>
+
+  f0:	ff0100b7          	lui	ra,0xff010
+  f4:	f0008093          	addi	ra,ra,-256 # ff00ff00 <fail+0xff00fd98>
+  f8:	00107133          	and	sp,zero,ra
+  fc:	00000e93          	li	t4,0
+ 100:	01800193          	li	gp,24
+ 104:	07d11263          	bne	sp,t4,168 <fail>
+
+ 108:	00ff00b7          	lui	ra,0xff0
+ 10c:	0ff08093          	addi	ra,ra,255 # ff00ff <fail+0xfeff97>
+ 110:	0000f133          	and	sp,ra,zero
+ 114:	00000e93          	li	t4,0
+ 118:	01900193          	li	gp,25
+ 11c:	05d11663          	bne	sp,t4,168 <fail>
+
+ 120:	000070b3          	and	ra,zero,zero
+ 124:	00000e93          	li	t4,0
+ 128:	01a00193          	li	gp,26
+ 12c:	03d09e63          	bne	ra,t4,168 <fail>
+
+ 130:	111110b7          	lui	ra,0x11111
+ 134:	11108093          	addi	ra,ra,273 # 11111111 <fail+0x11110fa9>
+ 138:	22222137          	lui	sp,0x22222
+ 13c:	22210113          	addi	sp,sp,546 # 22222222 <fail+0x222220ba>
+ 140:	0020f033          	and	zero,ra,sp
+ 144:	00000e93          	li	t4,0
+ 148:	01b00193          	li	gp,27
+ 14c:	01d01e63          	bne	zero,t4,168 <fail>
+ 150:	00301263          	bne	zero,gp,154 <pass>
+
+ 154:	00000013          	nop
+ 158:	00000013          	nop
+ 15c:	ff9ff06f          	j	154 <pass>
+ 160:	00000013          	nop
+ 164:	00000013          	nop
+
+ 168:	00000013          	nop
+ 16c:	00000493          	li	s1,0
+ 170:	ff9ff06f          	j	168 <fail>
+ 174:	00000013          	nop
+ 178:	00000013          	nop

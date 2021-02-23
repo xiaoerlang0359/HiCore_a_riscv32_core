@@ -1,0 +1,20 @@
+   0:	08f00393          	li	t2,143
+   4:	800002b7          	lui	t0,0x80000
+   8:	00000313          	li	t1,0
+
+0000000c <store_main>:
+   c:	00628023          	sb	t1,0(t0) # 80000000 <loop+0x7fffffcc>
+  10:	00128293          	addi	t0,t0,1
+  14:	00130313          	addi	t1,t1,1
+  18:	fe63dae3          	ble	t1,t2,c <store_main>
+  1c:	800002b7          	lui	t0,0x80000
+  20:	00000313          	li	t1,0
+
+00000024 <load_main>:
+  24:	0002ce03          	lbu	t3,0(t0) # 80000000 <loop+0x7fffffcc>
+  28:	00130313          	addi	t1,t1,1
+  2c:	00128293          	addi	t0,t0,1
+  30:	fe63dae3          	ble	t1,t2,24 <load_main>
+
+00000034 <loop>:
+  34:	0000006f          	j	34 <loop>

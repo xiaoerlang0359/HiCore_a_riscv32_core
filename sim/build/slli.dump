@@ -1,0 +1,71 @@
+00000000 <pass-0xe0>:
+   0:	00100093          	li	ra,1
+   4:	00009f13          	slli	t5,ra,0x0
+   8:	00100e93          	li	t4,1
+   c:	00200193          	li	gp,2
+  10:	0fdf1263          	bne	t5,t4,f4 <fail>
+  14:	00100093          	li	ra,1
+  18:	00109f13          	slli	t5,ra,0x1
+  1c:	00200e93          	li	t4,2
+  20:	00300193          	li	gp,3
+  24:	0ddf1863          	bne	t5,t4,f4 <fail>
+  28:	00100093          	li	ra,1
+  2c:	00709f13          	slli	t5,ra,0x7
+  30:	08000e93          	li	t4,128
+  34:	00400193          	li	gp,4
+  38:	0bdf1e63          	bne	t5,t4,f4 <fail>
+  3c:	00100093          	li	ra,1
+  40:	00e09f13          	slli	t5,ra,0xe
+  44:	00004eb7          	lui	t4,0x4
+  48:	00500193          	li	gp,5
+  4c:	0bdf1463          	bne	t5,t4,f4 <fail>
+  50:	00100093          	li	ra,1
+  54:	01f09f13          	slli	t5,ra,0x1f
+  58:	80000eb7          	lui	t4,0x80000
+  5c:	00600193          	li	gp,6
+  60:	09df1a63          	bne	t5,t4,f4 <fail>
+  64:	fff00093          	li	ra,-1
+  68:	00009f13          	slli	t5,ra,0x0
+  6c:	fff00e93          	li	t4,-1
+  70:	00700193          	li	gp,7
+  74:	09df1063          	bne	t5,t4,f4 <fail>
+  78:	fff00093          	li	ra,-1
+  7c:	00109f13          	slli	t5,ra,0x1
+  80:	ffe00e93          	li	t4,-2
+  84:	00800193          	li	gp,8
+  88:	07df1663          	bne	t5,t4,f4 <fail>
+  8c:	fff00093          	li	ra,-1
+  90:	00709f13          	slli	t5,ra,0x7
+  94:	f8000e93          	li	t4,-128
+  98:	00900193          	li	gp,9
+  9c:	05df1c63          	bne	t5,t4,f4 <fail>
+  a0:	fff00093          	li	ra,-1
+  a4:	00e09f13          	slli	t5,ra,0xe
+  a8:	ffffceb7          	lui	t4,0xffffc
+  ac:	00a00193          	li	gp,10
+  b0:	05df1263          	bne	t5,t4,f4 <fail>
+  b4:	fff00093          	li	ra,-1
+  b8:	01f09f13          	slli	t5,ra,0x1f
+  bc:	80000eb7          	lui	t4,0x80000
+  c0:	00b00193          	li	gp,11
+  c4:	03df1863          	bne	t5,t4,f4 <fail>
+  c8:	02100093          	li	ra,33
+  cc:	01409013          	slli	zero,ra,0x14
+  d0:	00000e93          	li	t4,0
+  d4:	01900193          	li	gp,25
+  d8:	01d01e63          	bne	zero,t4,f4 <fail>
+  dc:	00301263          	bne	zero,gp,e0 <pass>
+
+000000e0 <pass>:
+  e0:	00000013          	nop
+  e4:	00000013          	nop
+  e8:	ff9ff06f          	j	e0 <pass>
+  ec:	00000013          	nop
+  f0:	00000013          	nop
+
+000000f4 <fail>:
+  f4:	00000013          	nop
+  f8:	00000493          	li	s1,0
+  fc:	ff9ff06f          	j	f4 <fail>
+ 100:	00000013          	nop
+ 104:	00000013          	nop

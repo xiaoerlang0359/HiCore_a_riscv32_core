@@ -1,0 +1,35 @@
+   0:	00000013          	nop
+   4:	00000013          	nop
+   8:	00002517          	auipc	a0,0x2
+   c:	71c50513          	addi	a0,a0,1820 # 2724 <fail+0x26c0>
+  10:	004005ef          	jal	a1,14 <next_2>
+
+  14:	40b50533          	sub	a0,a0,a1
+  18:	00002eb7          	lui	t4,0x2
+  1c:	710e8e93          	addi	t4,t4,1808 # 2710 <fail+0x26ac>
+  20:	00200193          	li	gp,2
+  24:	05d51063          	bne	a0,t4,64 <fail>
+
+  28:	00000013          	nop
+  2c:	ffffe517          	auipc	a0,0xffffe
+  30:	8fc50513          	addi	a0,a0,-1796 # ffffd928 <fail+0xffffd8c4>
+  34:	004005ef          	jal	a1,38 <next_3>
+
+  38:	40b50533          	sub	a0,a0,a1
+  3c:	ffffeeb7          	lui	t4,0xffffe
+  40:	8f0e8e93          	addi	t4,t4,-1808 # ffffd8f0 <fail+0xffffd88c>
+  44:	00300193          	li	gp,3
+  48:	01d51e63          	bne	a0,t4,64 <fail>
+  4c:	00301263          	bne	zero,gp,50 <pass>
+
+  50:	00000013          	nop
+  54:	00000013          	nop
+  58:	ff9ff06f          	j	50 <pass>
+  5c:	00000013          	nop
+  60:	00000013          	nop
+
+  64:	00000013          	nop
+  68:	00000493          	li	s1,0
+  6c:	ff9ff06f          	j	64 <fail>
+  70:	00000013          	nop
+  74:	00000013          	nop
