@@ -50,9 +50,10 @@ sys_resetn u_sys_resetn(
     .peripheral_aresetn(rst_n)    
 );
 HiCore_cpu u_HiCore_cpu( 
-    .m_ext_irq(1'b0),
-    .m_time_irq(1'b0),
-    .m_soft_irq(1'b0),
+    .uart_irq(1'b0),
+    .ext_irq0(1'b0),
+    .ext_irq1(1'b0),
+    .async_clk(1'b0),
     .clk(clk),
     .rst_n(rst_n),
     .flush(flush),

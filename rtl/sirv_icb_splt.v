@@ -116,9 +116,8 @@ generate
 
         assign i_icb_cmd_ready_pre = sel_o_icb_cmd_ready;
         
-        wire cmd_diff_branch = (~rspid_fifo_empty) & (rspid_fifo_wdat != rspid_fifo_rdat);
-        assign i_icb_cmd_valid_pre = i_icb_cmd_valid & (~cmd_diff_branch) & (~rspid_fifo_full);
-        assign i_icb_cmd_ready     = i_icb_cmd_ready_pre & (~cmd_diff_branch) & (~rspid_fifo_full);
+        assign i_icb_cmd_valid_pre = i_icb_cmd_valid & (~rspid_fifo_full);
+        assign i_icb_cmd_ready     = i_icb_cmd_ready_pre & (~rspid_fifo_full);
 
         assign rspid_fifo_wen = i_icb_cmd_valid & i_icb_cmd_ready;
         assign rspid_fifo_ren = i_icb_rsp_valid & i_icb_rsp_ready;
@@ -136,7 +135,7 @@ generate
         assign rspid_fifo_wdat = i_icb_splt_indic;
 
         HiCore_pipe # (
-          .CUT_READY(0),
+          .CUT_READY(1),
           .DW(SPLT_NUM)
         ) split_fifo(
           .i_vld(rspid_fifo_i_valid), 
@@ -174,7 +173,7 @@ generate
             sel_i_icb_rsp_err = 1'b0;
             sel_i_icb_rsp_rdata = {DW{1'b0}};
             for (j=0;j<SPLT_NUM;j=j+1)begin
-                sel_i_icb_rsp_err  = sel_i_icb_rsp_err  | (    o_icb_rsp_port_id[j]  & o_icb_rsp_err[i]);
+                sel_i_icb_rsp_err  = sel_i_icb_rsp_err  | (    o_icb_rsp_port_id[j]  & o_icb_rsp_err[j]);
                 sel_i_icb_rsp_rdata= sel_i_icb_rsp_rdata| ({DW{o_icb_rsp_port_id[j]}}& o_icb_rsp_rdata[j]);
             end
         end

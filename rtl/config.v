@@ -30,6 +30,8 @@
 `define HiCore_IADDR_REGION `HiCore_ADDR_SIZE-1:`HiCore_ADDR_SIZE-16
 `define HiCore_IADDR_COMP   16'h0000
 
+`define HiCore_RAM_DEPTH 4096
+
 `define HiCore_BOOT_BASE  `HiCore_ADDR_SIZE'h0000_0000
 `define HiCore_BOOT_LIM   `HiCore_ADDR_SIZE'h0100_0000
 
@@ -51,5 +53,6 @@
 `define HiCore_PLIC_ADDR_BASE    `HiCore_ADDR_SIZE'hF100_0000
 `define HiCore_PLIC_ADDR_REGION  `HiCore_ADDR_SIZE-1:`HiCore_ADDR_SIZE-8
 `define HiCore_PLIC_ADDR_COMP    8'hF1
+
 
 `define HiCore_ICB_CMD_SIZE `HiCore_ADDR_SIZE + `HiCore_REG_SIZE + `HiCore_REG_SIZE/8 + 1

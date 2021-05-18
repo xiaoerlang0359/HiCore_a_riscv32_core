@@ -20,15 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiCore_cpu( 
-    input uart_irq,
-    input ext_irq0,
-    input ext_irq1,
-    input async_clk,
+module alu_test( 
+    input m_ext_irq,
+    input m_time_irq,
+    input m_soft_irq,
     input clk,
-    input rst_n,
-    output flush,
-    output branch
+    input rst_n
     );
 wire if2icache_icb_cmd_valid;
 wire if2icache_icb_cmd_ready;
@@ -45,7 +42,9 @@ wire if2de_valid;
 wire if2de_ready;
 wire [`HiCore_IF2DE_SIZE-1:0] if2de_info;
 wire if2de_cancel;
+wire branch;
 wire [`HiCore_PC_SIZE-1:0] branch_pc;
+wire flush;
 wire [`HiCore_PC_SIZE-1:0] flush_pc;
 
 HiCore_ifetch u_HiCore_ifetch(
@@ -89,7 +88,7 @@ wire icache_icb_rsp_err;
 wire [`HiCore_REG_SIZE-1:0] icache_icb_rsp_rdata;
 HiCore_dtcm_ctrl #(
     .DW(32),
-    .RAM_DEPTH(12)
+    .RAM_DEPTH(14)
 )u_ifetch_sram_ctrl(
 // itcm interface
 .mem_icb_cmd_valid(icache_icb_cmd_valid),
@@ -134,9 +133,6 @@ wire de2rob_fence_i_op;
 wire de2rob_mret_op;
 wire [`HiCore_ROB_PTR_SIZE-1:0] de2rob_tail_ptr;
 wire [`HiCore_PC_SIZE-1:0] de2rob_next_pc;
-wire plic_ext_irq;
-wire m_time_irq;
-wire m_soft_irq;
 
 HiCore_Decode u_HiCore_Decode(
     // if2de pipe interface
@@ -180,7 +176,7 @@ HiCore_Decode u_HiCore_Decode(
 .rob_next_pc(de2rob_next_pc),
 .rob_tail_ptr(de2rob_tail_ptr),
     // irq interface
-.m_ext_irq(plic_ext_irq),
+.m_ext_irq(m_ext_irq),
 .m_time_irq(m_time_irq),
 .m_soft_irq(m_soft_irq),
     // system interface
@@ -506,17 +502,6 @@ wire plic_icb_rsp_ready;
 wire plic_icb_rsp_err;
 wire [`HiCore_REG_SIZE-1:0] plic_icb_rsp_rdata;
 
-wire clint_icb_cmd_valid;
-wire clint_icb_cmd_ready;
-wire clint_icb_cmd_read;
-wire [`HiCore_ADDR_SIZE-1:0] clint_icb_cmd_addr;
-wire [`HiCore_REG_SIZE-1:0] clint_icb_cmd_wdata;
-wire [`HiCore_REG_SIZE/8-1:0] clint_icb_cmd_wmask;
-wire clint_icb_rsp_valid;
-wire clint_icb_rsp_ready;
-wire clint_icb_rsp_err;
-wire [`HiCore_REG_SIZE-1:0] clint_icb_rsp_rdata;
-
 wire pd_icb_cmd_valid;
 wire pd_icb_cmd_ready;
 wire pd_icb_cmd_read;
@@ -567,21 +552,10 @@ HiCore_biu u_HiCore_biu(
 .plic_icb_cmd_addr(plic_icb_cmd_addr),
 .plic_icb_cmd_wdata(plic_icb_cmd_wdata),
 .plic_icb_cmd_wmask(plic_icb_cmd_wmask),
-.plic_icb_rsp_valid(plic_icb_rsp_valid),
+.plic_icb_rsp_valid(plic_icb_cmd_valid),
 .plic_icb_rsp_ready(plic_icb_rsp_ready),
 .plic_icb_rsp_err(plic_icb_rsp_err),
 .plic_icb_rsp_rdata(plic_icb_rsp_rdata), 
-
-.clint_icb_cmd_ready(clint_icb_cmd_ready),
-.clint_icb_cmd_valid(clint_icb_cmd_valid),
-.clint_icb_cmd_read(clint_icb_cmd_read),
-.clint_icb_cmd_addr(clint_icb_cmd_addr),
-.clint_icb_cmd_wdata(clint_icb_cmd_wdata),
-.clint_icb_cmd_wmask(clint_icb_cmd_wmask),
-.clint_icb_rsp_valid(clint_icb_rsp_valid),
-.clint_icb_rsp_ready(clint_icb_rsp_ready),
-.clint_icb_rsp_err(clint_icb_rsp_err),
-.clint_icb_rsp_rdata(clint_icb_rsp_rdata),
 
 .nop_icb_cmd_ready(pd_icb_cmd_ready),
 .nop_icb_cmd_valid(pd_icb_cmd_valid),
@@ -600,7 +574,7 @@ HiCore_biu u_HiCore_biu(
 
 HiCore_dtcm_ctrl#(
 .DW(`HiCore_REG_SIZE),
-.RAM_DEPTH(12)
+.RAM_DEPTH(14)
 )uHiCore_dtcm_ctrl(
 // dtcm icb interface
 .mem_icb_cmd_valid(lsu2dcache_icb_cmd_valid),
@@ -655,46 +629,22 @@ sirv_icb_arbt #(
 .rst_n(rst_n) 
 );
 
-HiCore_plic_top u_HiCore_plic_top(
-.plic_icb_cmd_valid(plic_icb_cmd_valid),
-.plic_icb_cmd_ready(plic_icb_cmd_ready),
-.plic_icb_cmd_read(plic_icb_cmd_read),
-.plic_icb_cmd_addr(plic_icb_cmd_addr),
-.plic_icb_cmd_wdata(plic_icb_cmd_wdata),
-.plic_icb_cmd_wmask(plic_icb_cmd_wmask),
+HiCore_nop_slave #(
+.AW(`HiCore_ADDR_SIZE),
+.DW(`HiCore_REG_SIZE)
+)plic_slave(
+.icb_cmd_valid(plic_icb_cmd_valid),
+.icb_cmd_ready(plic_icb_cmd_ready),
+.icb_cmd_addr(plic_icb_cmd_addr),
+.icb_cmd_read(plic_icb_cmd_read),
+.icb_cmd_wdata(plic_icb_cmd_wdata),
+.icb_cmd_wmask(plic_icb_cmd_wmask),
 
-.plic_icb_rsp_valid(plic_icb_rsp_valid),
-.plic_icb_rsp_ready(plic_icb_rsp_ready),
-.plic_icb_rsp_rdata(plic_icb_rsp_rdata),
-.plic_icb_rsp_err(plic_icb_rsp_err),
+.icb_rsp_ready(plic_icb_rsp_ready),
+.icb_rsp_valid(plic_icb_rsp_valid),
+.icb_rsp_err(plic_icb_rsp_err),
+.icb_rsp_rdata(plic_icb_rsp_rdata),
 
-.uart_irq(uart_irq),
-.ext_irq0(ext_irq0),
-.ext_irq1(ext_irq1),
-
-.plic_ext_irq(plic_ext_irq),
-
-.clk(clk),
-.rst_n(rst_n)
-);
-
-HiCore_Clint u_HiCore_Clint(
-.clint_icb_cmd_valid(clint_icb_cmd_valid),
-.clint_icb_cmd_ready(clint_icb_cmd_ready),
-.clint_icb_cmd_read(clint_icb_cmd_read),
-.clint_icb_cmd_addr(clint_icb_cmd_addr),
-.clint_icb_cmd_wdata(clint_icb_cmd_wdata),
-.clint_icb_cmd_wmask(clint_icb_cmd_wmask),
-    
-.clint_icb_rsp_valid(clint_icb_rsp_valid),
-.clint_icb_rsp_ready(clint_icb_rsp_ready),
-.clint_icb_rsp_err(clint_icb_rsp_err),
-.clint_icb_rsp_rdata(clint_icb_rsp_rdata),
-    
-.async_clk(async_clk),
-.m_time_irq(m_time_irq),
-.m_soft_irq(m_soft_irq),
-    
 .clk(clk),
 .rst_n(rst_n)
 );
@@ -766,7 +716,7 @@ HiCore_csr u_HiCore_csr(
 .csr_mepc(csr2commit_mepc),
 .csr_mtvec(csr2commit_mtvec),
     // irq interface
-.ext_irq(plic_ext_irq),
+.ext_irq(m_ext_irq),
 .sft_irq(m_soft_irq),
 .tmr_irq(m_time_irq),
     // system interface

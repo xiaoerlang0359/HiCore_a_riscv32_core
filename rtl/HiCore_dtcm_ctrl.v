@@ -1,3 +1,4 @@
+`include "config.v"
 module  HiCore_dtcm_ctrl#(
     parameter DW=32,
     parameter RAM_DEPTH=14
@@ -25,13 +26,30 @@ wire [DW/8-1:0] wea = {4{~mem_icb_cmd_read}} & mem_icb_cmd_wmask;
 wire [DW-1:0] douta;
 wire ena = mem_icb_cmd_valid & mem_icb_cmd_ready;
 
-dtcm_ram udtcm_ram(
-.addra(addra),
-.clka(clk),
-.dina(dina),
-.douta(douta),
-.ena(ena),
-.wea(wea)
+//dtcm_ram udtcm_ram(
+//.addra(addra),
+//.clka(clk),
+//.dina(dina),
+//.douta(douta),
+//.ena(ena),
+//.wea(wea)
+//);
+
+sirv_sim_ram #(
+.DP(`HiCore_RAM_DEPTH),
+.FORCE_X2ZERO(0),
+.DW(32),
+.MW(4),
+.AW(RAM_DEPTH) 
+)HiCore_sim_ram
+(
+.clk(clk), 
+.din(dina), 
+.addr(addra),
+.cs(1'b1),
+.we(~mem_icb_cmd_read),
+.wem(mem_icb_cmd_wmask),
+.dout(douta)
 );
 // pipe
 wire i_dat=1'b1;

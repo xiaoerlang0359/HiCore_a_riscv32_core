@@ -129,53 +129,78 @@ endgenerate
 
 endmodule
 
-module HiCore_bypbuf #(
-    parameter DP = 8,
+//module HiCore_bypbuf #(
+//    parameter DP = 8,
+//    parameter DW = 32
+//)(
+//    input           i_vld,
+//    output          i_rdy,
+//    input  [DW-1:0] i_dat,
+//    output          o_vld,
+//    input           o_rdy,
+//    output [DW-1:0] o_dat,
+//
+//    input clk,
+//    input rst_n
+//);
+//
+//wire          fifo_i_vld;
+//wire          fifo_i_rdy;
+//wire [DW-1:0] fifo_i_dat;
+//
+//wire          fifo_o_vld;
+//wire          fifo_o_rdy;
+//wire [DW-1:0] fifo_o_dat;
+//
+//HiCore_fifo # (
+//       .DP(DP),
+//       .DW(DW)
+//) u_bypbuf_fifo(
+//    .i_vld   (fifo_i_vld),
+//    .i_rdy   (fifo_i_rdy),
+//    .i_dat   (fifo_i_dat),
+//    .o_vld   (fifo_o_vld),
+//    .o_rdy   (fifo_o_rdy),
+//    .o_dat   (fifo_o_dat),
+//    .clk     (clk  ),
+//    .rst_n   (rst_n)
+//);
+//
+//assign i_rdy = fifo_i_rdy;
+//
+//wire byp = i_vld & o_rdy & (~fifo_o_vld);
+//
+//assign fifo_o_rdy = o_rdy;
+//assign o_vld = fifo_o_vld | i_vld;
+//
+//assign o_dat = fifo_o_vld ? fifo_o_dat:i_dat;
+//assign fifo_i_dat = i_dat;
+//
+//assign fifo_i_vld = i_vld & (~byp);
+//
+//endmodule
+module HiCore_sync#(
+    parameter DP = 2,
     parameter DW = 32
 )(
-    input           i_vld,
-    output          i_rdy,
-    input  [DW-1:0] i_dat,
-    output          o_vld,
-    input           o_rdy,
-    output [DW-1:0] o_dat,
-
-    input clk,
-    input rst_n
+    input  [DW-1:0] dina,
+    output [DW-1:0] dout,
+    
+    input  rst_n,
+    input  clk
 );
+wire [DW-1:0] sync_dat [DP-1:0];
+genvar i;
+generate
+    for (i=0;i<DP;i=i+1)begin:sync_gen
+        if (i==0) begin: i_is_0
+            gnrl_dffr #(DW) sync_dffr(dina,sync_dat[0],clk,rst_n);
+        end
+        else begin: i_is_not_0
+            gnrl_dffr #(DW) sync_dffr(sync_dat[i-1],sync_dat[i],clk,rst_n);
+        end
+    end
+endgenerate
 
-wire          fifo_i_vld;
-wire          fifo_i_rdy;
-wire [DW-1:0] fifo_i_dat;
-
-wire          fifo_o_vld;
-wire          fifo_o_rdy;
-wire [DW-1:0] fifo_o_dat;
-
-HiCore_fifo # (
-       .DP(DP),
-       .DW(DW)
-) u_bypbuf_fifo(
-    .i_vld   (fifo_i_vld),
-    .i_rdy   (fifo_i_rdy),
-    .i_dat   (fifo_i_dat),
-    .o_vld   (fifo_o_vld),
-    .o_rdy   (fifo_o_rdy),
-    .o_dat   (fifo_o_dat),
-    .clk     (clk  ),
-    .rst_n   (rst_n)
-);
-
-assign i_rdy = fifo_i_rdy;
-
-wire byp = i_vld & o_rdy & (~fifo_o_vld);
-
-assign fifo_o_rdy = o_rdy;
-assign o_vld = fifo_o_vld | i_vld;
-
-assign o_dat = fifo_o_vld ? fifo_o_dat:i_dat;
-assign fifo_i_dat = i_dat;
-
-assign fifo_i_vld = i_vld & (~byp);
-
+assign dout = sync_dat[DP-1];
 endmodule
