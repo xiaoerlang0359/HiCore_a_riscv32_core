@@ -1,0 +1,200 @@
+{
+    "HiCore_nop": [
+        "HiCore_nop",
+        "PGfnV",
+        "module",
+        26
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "sirv_gnrl_bypbuf": [
+        "sirv_gnrl_bypbuf",
+        "HVgDa",
+        "module",
+        4
+    ],
+    "sirv_gnrl_cdc_rx": [
+        "sirv_gnrl_cdc_rx",
+        "Ppyde",
+        "module",
+        2
+    ],
+    "sirv_gnrl_cdc_tx": [
+        "sirv_gnrl_cdc_tx",
+        "dGkeq",
+        "module",
+        3
+    ],
+    "HiCore_agu": [
+        "HiCore_agu",
+        "Zr9DL",
+        "module",
+        11
+    ],
+    "HiCore_Clint": [
+        "HiCore_Clint",
+        "A1gf5",
+        "module",
+        5
+    ],
+    "HiCore_commit": [
+        "HiCore_commit",
+        "Rx9gz",
+        "module",
+        15
+    ],
+    "HiCore_biu": [
+        "HiCore_biu",
+        "yuAYJ",
+        "module",
+        12
+    ],
+    "HiCore_lsu": [
+        "HiCore_lsu",
+        "KgSmH",
+        "module",
+        6
+    ],
+    "sirv_gnrl_icb2apb": [
+        "sirv_gnrl_icb2apb",
+        "ftBvI",
+        "module",
+        24
+    ],
+    "HiCore_alu": [
+        "HiCore_alu",
+        "iLK0p",
+        "module",
+        7
+    ],
+    "sirv_gnrl_ram": [
+        "sirv_gnrl_ram",
+        "NZSqP",
+        "module",
+        17
+    ],
+    "HiCore_ROB_0000": [
+        "HiCore_ROB_0000",
+        "hML7c",
+        "module",
+        8
+    ],
+    "sirv_gnrl_dffrs": [
+        "sirv_gnrl_dffrs",
+        "QHiet",
+        "module",
+        9
+    ],
+    "sirv_icb_arbt_0000": [
+        "sirv_icb_arbt_0000",
+        "Pjx2L",
+        "module",
+        14
+    ],
+    "sirv_gnrl_ltch": [
+        "sirv_gnrl_ltch",
+        "UTi0b",
+        "module",
+        10
+    ],
+    "Hicore_regfile_0000": [
+        "Hicore_regfile_0000",
+        "hgaIv",
+        "module",
+        16
+    ],
+    "HiCore_Decode": [
+        "HiCore_Decode",
+        "rTWxr",
+        "module",
+        13
+    ],
+    "HiCore_dtcm_ctrl": [
+        "HiCore_dtcm_ctrl",
+        "SCBf9",
+        "module",
+        27
+    ],
+    "sirv_gnrl_icb_arbt": [
+        "sirv_gnrl_icb_arbt",
+        "ezZBn",
+        "module",
+        18
+    ],
+    "sirv_gnrl_icb_buffer": [
+        "sirv_gnrl_icb_buffer",
+        "en2hD",
+        "module",
+        19
+    ],
+    "sirv_gnrl_icb_n2w": [
+        "sirv_gnrl_icb_n2w",
+        "AFbAe",
+        "module",
+        20
+    ],
+    "sirv_gnrl_icb_splt": [
+        "sirv_gnrl_icb_splt",
+        "GN8cr",
+        "module",
+        21
+    ],
+    "sirv_gnrl_icb2axi": [
+        "sirv_gnrl_icb2axi",
+        "S5wTp",
+        "module",
+        22
+    ],
+    "sirv_gnrl_icb32towishb8": [
+        "sirv_gnrl_icb32towishb8",
+        "Fsvhg",
+        "module",
+        23
+    ],
+    "HiCore_ifetch": [
+        "HiCore_ifetch",
+        "rLBTR",
+        "module",
+        25
+    ],
+    "HiCore_Issue": [
+        "HiCore_Issue",
+        "ujhM9",
+        "module",
+        29
+    ],
+    "HiCore_bjp": [
+        "HiCore_bjp",
+        "LIvAv",
+        "module",
+        28
+    ],
+    "HiCore_csr": [
+        "HiCore_csr",
+        "TL4HB",
+        "module",
+        30
+    ],
+    "HiCore_sync_fifo": [
+        "HiCore_sync_fifo",
+        "KTJnG",
+        "module",
+        31
+    ],
+    "tb_top": [
+        "tb_top",
+        "jdPWL",
+        "module",
+        32
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        33
+    ]
+}

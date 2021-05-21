@@ -1,0 +1,41 @@
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-1_Full64; Runtime version O-2018.09-1_Full64;  May 21 23:37 2021
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TESTCASE=                                                                                                                                                                                                  /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../../riscv-tools/riscv-tests/isa/generated/rv32ui-p-and
+ITCM 0x00: 1480006f
+ITCM 0x01: 34051073
+ITCM 0x02: 00002517
+ITCM 0x03: ff850513
+ITCM 0x04: 01e52023
+ITCM 0x05: 01f52223
+ITCM 0x06: 34202f73
+ITCM 0x07: 040f4a63
+ITCM 0x16: 000f0463
+ITCM 0x20: 007f8f93
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~ Test Result Summary ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~TESTCASE:                                                                                                                                                                                                   /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../../riscv-tools/riscv-tests/isa/generated/rv32ui-p-and ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~Total cycle_count value:      59001 ~~~~~~~~~~~~~
+~~~~~~~~~~The valid Instruction Count:      14387 ~~~~~~~~~~~~~
+~~~~~The test ending reached at cycle:      58900 ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~The final x3 Reg value:          1 ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~ TEST_PASS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~ #####     ##     ####    #### ~~~~~~~~~~~~~~~~
+~~~~~~~~~ #    #   #  #   #       #     ~~~~~~~~~~~~~~~~
+~~~~~~~~~ #    #  #    #   ####    #### ~~~~~~~~~~~~~~~~
+~~~~~~~~~ #####   ######       #       #~~~~~~~~~~~~~~~~
+~~~~~~~~~ #       #    #  #    #  #    #~~~~~~~~~~~~~~~~
+~~~~~~~~~ #       #    #   ####    #### ~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$finish called from file "/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/tb/tb_top.v", line 106.
+$finish at simulation time            236134000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 236134000 ps
+CPU Time:      1.750 seconds;       Data structure size:   0.5Mb
+Fri May 21 23:37:11 2021

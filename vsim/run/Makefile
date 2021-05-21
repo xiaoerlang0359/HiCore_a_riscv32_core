@@ -1,0 +1,1 @@
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/bin/run.makefile

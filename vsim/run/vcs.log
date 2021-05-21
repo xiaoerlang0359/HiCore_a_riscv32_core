@@ -1,0 +1,264 @@
+Command: vcs -timescale=1ns/1ns -fsdb -full64 -R +vc +v2k -sverilog -debug_all -P \
+/home/synopsys/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/novas.tab /home/synopsys/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/pli.a \
+-l vcs.log +incdir+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/ \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_bufs.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Clint.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_lsu.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_nop_slave.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_alu.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_ROB.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_dffs.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_agu.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_biu.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Decode.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_icb_arbt.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/gnrl_dffs.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_xchecker.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_bypbuf.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_commit.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_plic_top.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_regfile.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_ram.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_sim_ram.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_icbs.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_ifetch.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_nop.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_dtcm_ctrl.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_LevelGateway.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_bjp.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_plic_man.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Issue.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_icb_splt.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_mem_queue.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_csr.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_cpu.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_branch.v \
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_pipe.v /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/tb/tb_top.v \
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-fsdb' will be deprecated in a future release.  Please use 
+  '-debug_acc+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+        Version O-2018.09-1_Full64 -- Fri May 21 23:33:09 2021
+               Copyright (c) 1991-2018 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_bufs.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Clint.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Clint.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_lsu.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_lsu.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_nop_slave.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_alu.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_alu.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_ROB.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_ROB.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_dffs.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_agu.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_agu.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_biu.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_biu.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Decode.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Decode.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_icb_arbt.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/gnrl_dffs.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_xchecker.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_bypbuf.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_commit.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_commit.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_plic_top.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_plic_top.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_regfile.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_regfile.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_ram.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_sim_ram.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_gnrl_icbs.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_ifetch.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_ifetch.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_nop.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_nop.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_dtcm_ctrl.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_dtcm_ctrl.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_LevelGateway.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_bjp.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_bjp.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_plic_man.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Issue.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Issue.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/sirv_icb_splt.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_mem_queue.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_mem_queue.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_csr.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_csr.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_cpu.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_cpu.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_branch.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_branch.v'.
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_pipe.v'
+Parsing design file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/tb/tb_top.v'
+Parsing included file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/config.v'.
+Back to file '/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/tb/tb_top.v'.
+Top Level Modules:
+       sirv_gnrl_cdc_rx
+       sirv_gnrl_cdc_tx
+       sirv_gnrl_bypbuf
+       sirv_gnrl_dffrs
+       sirv_gnrl_ltch
+       sirv_gnrl_ram
+       sirv_gnrl_icb_arbt
+       sirv_gnrl_icb_buffer
+       sirv_gnrl_icb_n2w
+       sirv_gnrl_icb_splt
+       sirv_gnrl_icb2axi
+       sirv_gnrl_icb32towishb8
+       sirv_gnrl_icb2apb
+       HiCore_sync_fifo
+       tb_top
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_pipe.v, 74
+dp1_fifo, "HiCore_pipe #(.DW(DW), .CUT_READY(1)) u_Hicore_pipe( .i_vld (i_vld),  .i_rdy (i_rdy),  .i_dat (i_dat),  .o_vld (o_vld),  .o_rdy (o_rdy),  .o_dat (o_dat),  .clk (clk),  .rst_n (rst_n));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_lsu.v, 131
+HiCore_lsu, "sirv_bypbuf #(.DP(4), .DW((((32 + 32) + (32 / 8)) + 1))) mem_bypbuf( .i_vld (i_mem_fifo_vld),  .i_rdy (i_mem_fifo_rdy),  .i_dat (i_mem_fifo_wdat),  .i_cancel (1'b0),  .o_vld (o_mem_fifo_vld),  .o_rdy (o_mem_fifo_rdy),  .o_dat (o_mem_fifo_rdat),  .flush (1'b0),  .clk (clk),  .rst_n (rst_n));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[NMIN] No module instance name
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Clint.v, 47
+  No module instance name is specified.
+  Source info: HiCore_sync #(.DP(2), .DW(1)) ( .dina (async_clk),  .dout 
+  (sync_clk),  .rst_n (rst_n),  .clk (clk));
+
+
+Warning-[NMIN] No module instance name
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_Clint.v, 130
+  No module instance name is specified.
+  Source info: HiCore_pipe #(.CUT_READY(0), .DW(32)) ( .i_vld 
+  (clint_icb_cmd_valid),  .i_rdy (clint_icb_cmd_ready),  .i_dat (pipe_idat),  
+  .i_cancel (1'b0),  .o_vld (clint_ic ...
+
+
+Warning-[PCWM-W] Port connection width mismatch
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/rtl/HiCore_plic_top.v, 32
+"sirv_plic_man #(2, 4, 2, 1, 1, 1, ) u_sirv_plic_man( .icb_cmd_valid (plic_icb_cmd_valid),  .icb_cmd_ready (plic_icb_cmd_ready),  .icb_cmd_read (plic_icb_cmd_read),  .icb_cmd_addr (plic_icb_cmd_addr),  .icb_cmd_wdata (plic_icb_cmd_wdata),  .icb_rsp_valid (plic_icb_rsp_valid),  .icb_rsp_ready (plic_icb_rsp_ready),  .icb_rsp_rdata (plic_icb_rsp_rdata),  .plic_irq_i (plic_irq_i),  .plic_irq_o (plic_ext_irq),  .clk (clk),  .rst_n (rst_n));"
+  The following 32-bit expression is connected to 24-bit port "icb_cmd_addr" 
+  of module "sirv_plic_man", instance "u_sirv_plic_man".
+  Expression: plic_icb_cmd_addr
+  	use +lint=PCWM for more details
+
+Starting vcs inline pass...
+Notice: Ports coerced to inout, use -notice for details
+31 modules and 0 UDP read.
+recompiling module sirv_gnrl_cdc_rx
+recompiling module sirv_gnrl_cdc_tx
+recompiling module sirv_gnrl_bypbuf
+recompiling module HiCore_Clint
+recompiling module HiCore_lsu
+recompiling module HiCore_alu
+recompiling module HiCore_ROB
+recompiling module sirv_gnrl_dffrs
+recompiling module sirv_gnrl_ltch
+recompiling module HiCore_agu
+recompiling module HiCore_biu
+recompiling module HiCore_Decode
+recompiling module sirv_icb_arbt
+recompiling module HiCore_commit
+recompiling module Hicore_regfile
+recompiling module sirv_gnrl_ram
+recompiling module sirv_gnrl_icb_arbt
+recompiling module sirv_gnrl_icb_buffer
+recompiling module sirv_gnrl_icb_n2w
+recompiling module sirv_gnrl_icb_splt
+recompiling module sirv_gnrl_icb2axi
+recompiling module sirv_gnrl_icb32towishb8
+recompiling module sirv_gnrl_icb2apb
+recompiling module HiCore_ifetch
+recompiling module HiCore_nop
+recompiling module HiCore_dtcm_ctrl
+recompiling module HiCore_bjp
+recompiling module HiCore_Issue
+recompiling module HiCore_csr
+recompiling module HiCore_sync_fifo
+recompiling module tb_top
+All of 31 modules done
+make[2]: Entering directory `/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/csrc' \
+
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv    -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
+-Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic  -Wl,-rpath=/home/synopsys/vcs-mx/O-2018.09-1/linux64/lib \
+-L/home/synopsys/vcs-mx/O-2018.09-1/linux64/lib   objs/amcQw_d.o   _126798_archive_1.so \
+SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lzerosoft_rt_stubs -lvirsim -lerrorinf -lsnpsmalloc -lvfs /home/synopsys/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/pli.a \
+-lvcsnew -lsimprofile -luclinative /home/synopsys/vcs-mx/O-2018.09-1/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive -lvcsucli -Wl,-no-whole-archive        _vcs_pli_stub_.o   /home/synopsys/vcs-mx/O-2018.09-1/linux64/lib/vcs_save_restore_new.o \
+/home/synopsys/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/pli.a -ldl -lm  -lc \
+-lpthread -ldl 
+../simv up to date
+make[2]: Leaving directory `/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/csrc' \
+
+Command: /home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/./simv +vc +v2k -a vcs.log
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-1_Full64; Runtime version O-2018.09-1_Full64;  May 21 23:33 2021
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Warning-[STASKW_CO1] Cannot open file
+  The file '.verilog' could not be opened. No such file or directory.
+  Please ensure that the file exists with proper permissions.
+
+
+Warning-[STASKW_RMCOF] Cannot open file
+/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/tb/tb_top.v, 122
+  Cannot open file '.verilog' passed as argument to $readmem.
+  Please verify that the first argument to $readmem is a file that exists with
+  proper permissions.
+
+ITCM 0x00: xxxxxxxx
+ITCM 0x01: xxxxxxxx
+ITCM 0x02: xxxxxxxx
+ITCM 0x03: xxxxxxxx
+ITCM 0x04: xxxxxxxx
+ITCM 0x05: xxxxxxxx
+ITCM 0x06: xxxxxxxx
+ITCM 0x07: xxxxxxxx
+ITCM 0x16: xxxxxxxx
+ITCM 0x20: xxxxxxxx
+Time out !!!
+$finish called from file "/home/ICer/ic_prjs/HiCore_a_riscv32_core/vsim/run/../install/tb/tb_top.v", line 112.
+$finish at simulation time          40000000000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 40000000000 ps
+CPU Time:    167.240 seconds;       Data structure size:   0.5Mb
+Fri May 21 23:36:01 2021
+CPU time: 3.794 seconds to compile + .508 seconds to elab + .202 seconds to link + 167.264 seconds in simulation
